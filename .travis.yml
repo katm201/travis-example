@@ -1,6 +1,13 @@
 language: node_js
 node_js:
-  - 8.4.0
+- 8.4.0
 before_script:
-  - npm run build:prod
+- npm run build:prod
 script: node ./build/server/index.js & npm run test
+deploy:
+  provider: heroku
+  api_key:
+    secure: Vu44G5zushb9zwxaJfrd2U7nawgX6dve7wcPA3JV9VoQe7BcYk9dPgUF3EVSTTNqiOf0q2bsZE1WerDYr2XDlqOYr+1e9IbLI4BF5Poz6RwAACW3UpE/CudhzXr3SlZazEBIDY5XrM6Bfz5rgzWB7hta4/7GOb/Mjx4RJDvbiipVLJAJvIIYPxdFhleqXMMgfwrkcuu5oJqV7jIH3uRUBeByM/JtN/CZIdx6+5YqeBRTgHOuAyyhpoLal2WMkdz/xh/s5eGIaoTgrIzJxg5a+vWzt+MtgYVpeGAbIHQMfmSf761NNHKBgiigBEQYBiqO36fHuLvoPfRz/oLBC0BbuCpXtBcKJvVW2YenaIVTPlkbSRb8YMrduD54BExlaoQTsftec4U4Vd/iS6P/TN2pJw3GOFeRWXHQgB35IVRB/uDR1dVyeX3e4F5Dgv6wBObTug1/0g45jLmjQEW9nz13XMWDt96WNQhU3VWxQOIEhIUi3t5JKnSTYL9Of0wsWIGiFIaw8puBdsJP0EQp7RCPEDoDMcV3OaNWdh+rZjQqtHaH5KM3ux3XSzfQc4yc4lHXPYkVEKXNVOjQOiZiXpQzllDBQPSJt0cZvEmcjWqW0ORP21IqOLCADi+3IItLeYpW3/7T27UqO9V+B9E8haQQCGftTfobfjgZ5neHaGG9VBo=
+  app: travis-heroku-example-staging
+  on:
+    repo: katm201/travis-example
