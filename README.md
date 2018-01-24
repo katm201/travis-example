@@ -11,7 +11,7 @@ Build a basic app with a server and at least one test (nothing fancy necessary).
 
 Create a new public repo on Github for your project. Next, sign up for an account using your Github credentials at [Travis-CI.org](https://travis-ci.org/), if you don't already have one. Once you’ve logged in, go to your account page and give Travis permission to access your repo.
 
-[!screenshot](./images/01-profile.png)
+![screenshot](./images/01-profile.png)
 
 Next, you'll need to configure Travis with a .yml file. Add .travis.yml to your root directory by executing the following command:
 
@@ -35,11 +35,11 @@ Once you’ve started (and failed/cancelled) your first build, you can add your 
 
 Go into the repo's settings:
 
-[!screenshot](./images/02-repo-settings.png)
+![screenshot](./images/02-repo-settings.png)
 
 Then add any environment variables that you have for your repo:
 
-[!screenshot](./images/03-env-variables.png)
+![screenshot](./images/03-env-variables.png)
 
 Travis allows you to add both unsecured and unsecured environment variables for your repo. As a security measure, however, Travis will *not* allow you to use secured environment variables across repos, like if you're doing a pull request between forks. 
 
@@ -67,7 +67,7 @@ script: node ./build/server/index.js & npm run test
 
 Once you have all of these pieces specified for Travis, you should get a passing build.
 
-[!screenshot](./images/04-passing-build.png)
+![screenshot](./images/04-passing-build.png)
 
 If all you're looking for is continuous integration for testing, then you're done! 
 
@@ -103,7 +103,7 @@ Decide if you want the current app to be your Staging or Production version, the
 On your Pipeline’s control page, click the button to create a Staging version of your app. This is the version we’re going to hook up to Travis for automatic deployment. If we like what we’ve built and everything seems solid, we can promote our Staging app to Production manually.
 
 Pipeline Dashboard:
-[!screenshot](./images/05-pipelines-dashboard.png)
+![screenshot](./images/05-pipelines-dashboard.png)
 
 ### Review Apps ###
 
@@ -117,7 +117,7 @@ A pull request will now automatically trigger a build for a review app.
 
 Heroku requires that you set your environment variables separately for each app in the pipeline (similar interface as with Travis). This allows you to connect a separate “testing” database or API key to your Staging app than what’s running for Production. You need to set your review apps to inherit your environment variables from Staging. *DO NOT* set them in your app.json, as that’s publically committed to Github.
 
-[!screenshot](./images/06-config-variables.png)
+![screenshot](./images/06-config-variables.png)
 
 ### Manual Deployment ###
 
@@ -125,7 +125,7 @@ Once everything is setup, you’ll want to do a manual deploy to your Staging or
 
 Click on the app you want to deploy, then click on the “Deploy” menu. Scroll to the bottom, select the branch on Github you want to deploy from, then hit “Deploy Branch”. Once complete, you’ll be able to view your deployed app!
 
-[!screenshot](./images/07-hello-world.png)
+![screenshot](./images/07-hello-world.png)
 
 ### Auto Deployment ###
 
